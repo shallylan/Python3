@@ -2,14 +2,19 @@
 import sys
 
 try:
-	for key,value in sys.argv:
-		workno = key
-		salary = int(value)
+	list = sys.argv[1:]
+        
+	for i in list:
+		j = i.split(":")
+		workno = int(j[0])
+		salary = int(i[1])
+
+def cal(salary,workno):
 
 	cut = salary * (1-0.165)-3500
 	if cut <=0:
 		tax = 0
-		print("workno {},tax {:2f}".format(workno, tax))
+		a=print("workno {} tax {:2f}".format(workno, tax))
 	elif cut > 0:
 		if cut<1500:
 			tax = cut * 0.03 -0
@@ -29,6 +34,8 @@ try:
 			pass
 	else:
 		pass
-	print("workno {}, tax {:2f}".format(workno, tax)
+	a=print("workno {} tax {:2f}".format(workno, tax)
+return a
+
 except ValueError:
-	print("Parameter Error")
+	print("Peremeter Error")
