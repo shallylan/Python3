@@ -2,8 +2,9 @@
 import sys
 
 try:
-	workno = sys.argv[1]
-	salary = int(sys.argv[2])
+	for key,value in sys.argv:
+		workno = key
+		salary = int(value)
 
 	cut = salary * (1-0.165)-3500
 	if cut <=0:
@@ -29,6 +30,5 @@ try:
 	else:
 		pass
 	print("workno {}, tax {:2f}".format(workno, tax)
-
 except ValueError:
 	print("Parameter Error")
