@@ -4,7 +4,6 @@ import sys
 try:
 	workno = sys.argv[1]
 	salary = int(sys.argv[2])
-	data = {}
 
 	cut = salary * (1-0.165)-3500
 	if cut <=0:
