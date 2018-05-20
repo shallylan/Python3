@@ -1,20 +1,11 @@
 #!/usr/bin/env python3
 import sys
 
-try:
-	list = sys.argv[1:]
-        
-	for i in list:
-		j = i.split(":")
-		workno = int(j[0])
-		salary = int(i[1])
-
-def cal(salary,workno):
-
+def cal(salary, workno):
 	cut = salary * (1-0.165)-3500
 	if cut <=0:
 		tax = 0
-		a=print("workno {} tax {:2f}".format(workno, tax))
+		a=("workno {} tax {:2f}".format(workno, tax))
 	elif cut > 0:
 		if cut<1500:
 			tax = cut * 0.03 -0
@@ -34,8 +25,6 @@ def cal(salary,workno):
 			pass
 	else:
 		pass
-	a=print("workno {} tax {:2f}".format(workno, tax)
-return a
+	a=("workno {} tax {:2f}".format(workno, tax))
 
-except ValueError:
-	print("Peremeter Error")
+	return a
