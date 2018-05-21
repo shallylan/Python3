@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import sys
 
-def cal(salary, workno):
+def cal(workno, salary):
 	cut = salary * (1-0.165)-3500
 	if cut <=0:
 		tax = 0
@@ -23,8 +23,8 @@ def cal(salary, workno):
 			tax = cut * 0.45
 		else:
 			pass
+		a=("workno {} tax {:2f}".format(workno, tax))
 	else:
 		pass
-	a=("workno {} tax {:2f}".format(workno, tax))
 
 	return a
