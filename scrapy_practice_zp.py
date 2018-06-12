@@ -17,9 +17,10 @@ class scrapy_practice(scrapy.Spider):
         for course in response.css('div.course-body'):
             yield {
                 'name': course.css('div.course-name::text').extract_first(),
-                'description': course.css('div.course-desc::test').extract_first(),
+                'description': course.css('div.course-desc::text').extract_first(),
                 'student': course.xpath('//span[contains(@class, "pull-left")]/text()[2]').re_first('[^\d]*(\d)[^\d]*')
             }
 
-from scrapy import cmdline
-cmdline.execute("scrapy runspider scrapy_practice_zp.py".split())
+
+#from scrapy import cmdline
+#cmdline.execute("scrapy runspider scrapy_practice_zp.py".split())
