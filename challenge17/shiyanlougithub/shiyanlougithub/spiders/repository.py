@@ -2,7 +2,6 @@
 import scrapy
 from shiyanlougithub.items import RepositoryItem
 
-
 class RepositorySpider(scrapy.Spider):
     name = 'repository'
     #allowed_domains = ['github.com']
@@ -13,7 +12,7 @@ class RepositorySpider(scrapy.Spider):
         for i in response.css('li.col-12'):
             item = RepositoryItem()
 
-            item['name'] = i.xpath('.//a/text()').re_first('[\S+](.+)[\S]*')
+            item['name'] = i.xpath('.//a/text()').re_first('\s*(\w+)\s*')
 
             item['update_time'] = i.xpath('.//relative-time/@datetime').extract_first()
 
