@@ -1,15 +1,15 @@
 from datetime import datetime
-from flask import Flask, render_template
+#from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
-
+'''
 app = Flask(__name__)
 
 app.config.update(dict(
     SECRET_KEY = 'very secret key',
     SQLALCHEMY_DATABASE_URI='mysql+mysqldb://root@localhost:3306/simpledu?charset=utf8'
 ))
-
-db = SQLAlchemy(app)
+'''
+db = SQLAlchemy()
 
 class User(db.Model):
     __tablename__ = 'user'
@@ -32,7 +32,7 @@ class Course(db.Model):
 
 
 
-
+'''
 @app.route('/')
 def index():
     courses = Course.query.all()
@@ -41,6 +41,10 @@ def index():
 @app.route('/admin')
 def admin_index():
     return 'admin'
+'''
 
+'''
 if __name__ == '__main__':
     app.run()
+
+'''
