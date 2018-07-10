@@ -1,1 +1,1 @@
-alter('Hello, Simpledu!')
+alert('Hello, Simpledu!')
